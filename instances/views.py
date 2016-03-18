@@ -63,7 +63,7 @@ def instances(request):
                 try:
                     conn = wvmHostDetails(comp, comp.login, comp.password, comp.type)
                     if conn.get_host_instances():
-                        all_host_vms[comp.id, comp.name] = conn.get_host_instances()
+                        all_host_vms[comp.id, comp.name, comp.details] = conn.get_host_instances()
                         for vm, info in conn.get_host_instances().items():
                             try:
                                 check_uuid = Instance.objects.get(compute_id=comp.id, name=vm)

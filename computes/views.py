@@ -80,7 +80,8 @@ def computes(request):
                 new_ssh_host = Compute(name=data['name'],
                                        hostname=data['hostname'],
                                        type=CONN_SSH,
-                                       login=data['login'])
+                                       login=data['login'],
+                                       details=data['details'])
                 new_ssh_host.save()
                 return HttpResponseRedirect(request.get_full_path())
             else:

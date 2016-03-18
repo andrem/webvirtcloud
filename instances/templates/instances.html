@@ -41,6 +41,7 @@
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Host</th>
+											 	<th>Details</th> 
                                                 <th>Status</th>
                                                 <th>VCPU</th>
                                                 <th>Memory</th>
@@ -53,6 +54,7 @@
                                                     <tr>
                                                         <td><a href="{% url 'instance' host.0 vm %}">{{ vm }}</a></td>
                                                         <td><a href="{% url 'overview' host.0 %}">{{ host.1 }}</a></td>
+														<td><b>{{ host.2 }}</b></td>
                                                         <td>{% ifequal info.status 1 %}
                                                                 <span class="text-success">{% trans "Active" %}</span>
                                                             {% endifequal %}
